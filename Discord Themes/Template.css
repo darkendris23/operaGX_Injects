@@ -1,16 +1,16 @@
 :root {
     /* Changeable variables */
-	--texture: url("https://i.imgur.com/4XIYU6n.png") /* Damascus Black */;
-    --image: url("https://i.imgur.com/stKtZoz.jpg") /* Wallpaper */;
+    --texture: url("https://i.imgur.com/4XIYU6n.png") /* Damascus Black */;
+    --image: url("https://i.imgur.com/kfKSOyV.png") /* Wallpaper */;
     --image_live: url("https://i.imgur.com/0WdBZJc.gif") /* Live Wallpaper */;
+    --image_glass_overlay: linear-gradient(220deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.3) 100%) center / cover;
 
     --color_primary: black;
     --color_secondary: red;
 
-    /* -- Don't Change these -- */
+    --bg_channels: var(--image_glass_overlay), var(--image) center / cover /* <-- Choose between live or static */;
     --bg_guild: var(--texture);
     --bg_messages: var(--texture);
-    --bg_channels: var(--image_live);
 }
 
 /* Layout -- Backgrounds */
@@ -30,10 +30,10 @@
     z-index: 0 !important;
 }
 
-.scroller-1ox3I2 { /* Channels Background */
+.scroller-1ox3I2 /* Channels Background */,
+.scroller-WSmht3 /* DMs List Background */
+{ 
     background: var(--bg_channels) !important;
-    background-size: cover !important;
-    background-position: center !important;
 }
 
 /* Layout -- Recolors */
@@ -96,7 +96,7 @@
 .auto-2TJ1RH::-webkit-scrollbar-thumb,
 .thin-RnSY0a::-webkit-scrollbar-thumb
 {
-    background-color: red !important;
+    background-color: var(--color_secondary) !important;
 }
 
 .auto-2TJ1RH::-webkit-scrollbar-track {
@@ -104,11 +104,11 @@
 }
 
 .divider-IqmEqJ {
-    background: red !important
+    background: var(--color_secondary) !important
 }
 
 .content-3spvdd {
-    background: black !important;
+    background: var(--color_primary) !important;
     border-radius: 0px !important;
 }
 
@@ -116,7 +116,36 @@
 
 }
 
-.icon-1dGlZy { /* Booster Icon */
+.premiumIcon-3PLiGh { /* Animated Server Booster Icon */
+    color: transparent !important;
     background-image: url("https://i.imgur.com/13W3VWH.gif") !important;
     background-size: cover !important;
 }
+
+/* Discord logo vvv */
+.tutorialContainer-1pL9QS .listItem-3SmSlK .listItemWrapper-3d87LP svg foreignObject .wrapper-3kah-n:hover .childWrapper-1j_1ub svg,
+.tutorialContainer-1pL9QS .listItem-3SmSlK .listItemWrapper-3d87LP svg foreignObject .wrapper-3kah-n.selected-1Drb7Z .childWrapper-1j_1ub svg {
+    color: transparent !important;
+}
+
+.tutorialContainer-1pL9QS .listItem-3SmSlK .listItemWrapper-3d87LP svg foreignObject .wrapper-3kah-n:hover .childWrapper-1j_1ub,
+.tutorialContainer-1pL9QS .listItem-3SmSlK .listItemWrapper-3d87LP svg foreignObject .wrapper-3kah-n.selected-1Drb7Z .childWrapper-1j_1ub {
+    background: url("https://i.imgur.com/nv6nhEA.gif") !important;
+    background-size: cover !important;
+}
+
+.childWrapper-1j_1ub {
+    -webkit-transition: background 0.15s ease-out, color 0.15s ease-out;
+    transition: background 0.15s ease-out, color 0.15s ease-out;
+  }
+/* ^^^^^^^^^^^^^^^^ */
+
+/*
+.expandedFolderBackground-1kSAf6 {
+    background-image: linear-gradient(180deg, var(--bg-overlay-color) 0%, var(--color_primary) 100%) !important;
+}
+
+.folderIconWrapper-1oRIZr {
+    background-image: linear-gradient(180deg, var(--bg-overlay-color) 0%, var(--color_primary) 100%) !important;
+}
+*/
