@@ -1,0 +1,122 @@
+:root {
+    /* Changeable variables */
+	--texture: url("https://i.imgur.com/4XIYU6n.png") /* Damascus Black */;
+    --image: url("https://i.imgur.com/stKtZoz.jpg") /* Wallpaper */;
+    --image_live: url("https://i.imgur.com/0WdBZJc.gif") /* Live Wallpaper */;
+
+    --color_primary: black;
+    --color_secondary: red;
+
+    /* -- Don't Change these -- */
+    --bg_guild: var(--texture);
+    --bg_messages: var(--texture);
+    --bg_channels: var(--image_live);
+}
+
+/* Layout -- Backgrounds */
+.scroller-3X7KbA /* Guilds/Servers Panel */,
+.tabBody-2dgbAs /* Friends Backgrounds */
+{ 
+    background: var(--bg_guild) !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+.content-1jQy2l::before { /* Chat Area Pseudo Background */
+    height: 100% !important;
+    width: 100% !important;
+    background: var(--bg_messages) !important;
+    background-size: cover !important;
+    z-index: 0 !important;
+}
+
+.scroller-1ox3I2 { /* Channels Background */
+    background: var(--bg_channels) !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+/* Layout -- Recolors */
+.container-1-ERn5 .clickable-vvKY2q /* Server Name Area */,
+.children-3xh0VB:after /* Drop shadow effect near channel name */,
+.form-3gdLxP:before /* Drop effect above the chat box */,
+.chatContent-3KubbW /* Chat Area */,
+.members-3WRCEx /* Members Area */,
+.member-2gU6Ar /* The background in each member */,
+.peopleColumn-1wMU14 > *:not(.searchBar-2aylmZ) /* Friends Tab */
+{ 
+    background: transparent !important;
+}
+
+.header-3OsQeK /* Server Name Area */,
+.container-ZMc96U /* Channel Name Area */,
+.searchBar-3TnChZ /* DMs Searchbar */,
+.container-YkUktl /* Character Avatar Background */,
+.scrollableContainer-15eg7h /* Chatbox */,
+.jumpToPresentBar-1cEnH0 /* Self Explanatory */,
+.newMessagesBar-1hF-9G /* Self Explanatory */
+{ 
+    background: var(--color_primary) !important;
+    
+}
+
+/* Layout -- Borders */
+.wrapper-1_HaEi /* Guilds/Servers Panel */,
+.scroller-1ox3I2 /* The scrolling channels */,
+.scroller-WSmht3 /* DMs List */
+{ 
+    border-right: 2px solid !important;
+    border-image-slice: 1 !important;
+    border-image-source: linear-gradient(180deg, var(--color_primary) 0%, var(--color_secondary) 50%, var(--color_primary) 100%) !important;
+}
+
+.sidebar-1tnWFu { /* Channels Panel Full */
+    
+}
+
+/*ETC*/
+.guildSeparator-a4uisj { /* Little line near the DMs */
+    background: var(--color_secondary) !important;
+}
+
+.jumpToPresentBar-1cEnH0 {
+    opacity: 1 !important;
+}
+
+.header-3OsQeK, .searchBar-3TnChZ {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.tabBody-2dgbAs::before {
+    background: transparent !important;
+}
+
+/*Scrollbar*/
+.auto-2TJ1RH::-webkit-scrollbar-thumb,
+.thin-RnSY0a::-webkit-scrollbar-thumb
+{
+    background-color: red !important;
+}
+
+.auto-2TJ1RH::-webkit-scrollbar-track {
+    background-color: rgba(0,0,0,0.4) !important;
+}
+
+.divider-IqmEqJ {
+    background: red !important
+}
+
+.content-3spvdd {
+    background: black !important;
+    border-radius: 0px !important;
+}
+
+.content-3spvdd::before {
+
+}
+
+.icon-1dGlZy { /* Booster Icon */
+    background-image: url("https://i.imgur.com/13W3VWH.gif") !important;
+    background-size: cover !important;
+}
