@@ -3,8 +3,7 @@
     If you have questions, message me on my discord Reiko#3804
 
     Changelogs:
-    V. 1.0.0 - Added some of the selectors of the layout. Some are not organized
-    v. 1.0.1 - Added some minor selectors and avatar border on member list.
+    V. 1.0 - Added some of the selectors of the layout. Some are not organized
 */
 
 :root {
@@ -216,8 +215,8 @@
     margin: -3px !important;
     border: 3px solid transparent;
     border-radius: 50%;
-    animation-name: backgroundColorPalette !important;
-    animation-duration: 0.75s;
+    animation-name: colorChange !important;
+    animation-duration: 1s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     animation-direction: alternate;
@@ -243,9 +242,11 @@
 }
 
 @keyframes colorChange {
-    0% {border-color: red !important;}
-    25% {border-color: orange !important;}
-    50% {border-color: yellow !important;}
-    75% {border-color: green !important;}
-    100% {border-color: blue !important;}
-  }
+    0% {background: red;}
+    17% {background: orange;}
+    34% {background: yellow;}
+    50% {background: green;}
+    68% {background: blue;}
+    85% {background: indigo;}
+    100% {background: violet;}
+}
