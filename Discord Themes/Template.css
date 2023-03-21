@@ -3,7 +3,8 @@
     If you have questions, message me on my discord Reiko#3804
 
     Changelogs:
-    V. 1.0 - Added some of the selectors of the layout. Some are not organized
+    V. 1.0.0 - Added some of the selectors of the layout. Some are not organized
+    v. 1.0.1 - Added some minor selectors and avatar border on member list.
 */
 
 :root {
@@ -204,6 +205,22 @@
     animation-duration: 0.75s;
     animation-iteration-count: infinite;
     animation-timing-function: ease;
+}
+
+.avatar-6qzftW .wrapper-3Un6-K[aria-label^="Reiko"]:before { /* Member list -- Your avatar border */
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    margin: -3px !important;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    animation-name: backgroundColorPalette !important;
+    animation-duration: 0.75s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
 }
 
 /* Anims */
