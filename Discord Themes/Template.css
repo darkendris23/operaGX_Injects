@@ -1,3 +1,11 @@
+/*
+    These selectors are taken directly from Discord using Inspect Element
+    If you have questions, message me on my discord Reiko#3804
+
+    Changelogs:
+    V. 1.0 - Added some of the selectors of the layout. Some are not organized
+*/
+
 :root {
     /* Changeable variables */
     --texture: url("https://i.imgur.com/4XIYU6n.png") /* Damascus Black */;
@@ -54,10 +62,15 @@
 .container-YkUktl /* Character Avatar Background */,
 .scrollableContainer-15eg7h /* Chatbox */,
 .jumpToPresentBar-1cEnH0 /* Self Explanatory */,
-.newMessagesBar-1hF-9G /* Self Explanatory */
+.newMessagesBar-1hF-9G /* Self Explanatory */,
+.unreadBar-elBRZx /* Self-Explanatory */
 { 
     background: var(--color_primary) !important;
     
+}
+
+.item-2LIpTv {
+    background: red !important;
 }
 
 /* Layout -- Borders */
@@ -74,7 +87,7 @@
     
 }
 
-/*ETC*/
+/* ETC */
 .guildSeparator-a4uisj { /* Little line near the DMs */
     background: var(--color_secondary) !important;
 }
@@ -140,12 +153,82 @@
   }
 /* ^^^^^^^^^^^^^^^^ */
 
-/*
-.expandedFolderBackground-1kSAf6 {
-    background-image: linear-gradient(180deg, var(--bg-overlay-color) 0%, var(--color_primary) 100%) !important;
+/* Server Backgrounds -- The hover anim on icons */
+[aria-label="Servers"] > div:not(.wrapper-38slSD):nth-child(2) div div svg .wrapper-3kah-n {
+    background: rgba(0,0,0,0.4) !important;
 }
 
-.folderIconWrapper-1oRIZr {
-    background-image: linear-gradient(180deg, var(--bg-overlay-color) 0%, var(--color_primary) 100%) !important;
+.expandedFolderBackground-1kSAf6:not(.collapsed-uGXEbi) {
+    background: rgba(0,0,0,0.4) !important;
+    /*border: 2px solid red !important;
+    margin-left: -2px !important;
+    height: calc(100% - 10px) !important;
+    bottom: 0px !important;*/
+    /*animation-name: colorChange !important;
+    animation-duration: 0.75s !important;
+    animation-iteration-count: infinite !important;
+    animation-timing-function: ease !important;*/
 }
-*/
+
+.folder-241Joy {
+    background: transparent !important;
+}
+
+/* User Profile */
+[aria-label="Reiko"] div .userPopoutInner-1hXSeY.userProfileInner-3F03PX.userProfileInnerThemedWithBanner-2624Yx { /* Profile Card Body */
+    background: var(--image) center / cover !important;
+}
+
+[aria-label="Reiko"] .userPopoutOuter-3AVBmJ.userProfileOuter-1K_BYU { /* Behind the Profile Card body that acts as a border */
+    animation-name: backgroundColorPalette !important;
+    animation-duration: 0.75s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+
+[aria-label="Reiko"] div div svg foreignObject div.banner-2boKnS { /* Removed banner */
+    background: transparent !important;
+}
+
+[aria-label="Reiko"] div div .clickable-3iBWTO:before { /* The Avatar */
+    content: "";
+    height: 110% !important;
+    width: 110% !important;
+    border-radius: 80px !important;
+    background-color: green !important;
+    display: block;
+    position: absolute;
+    left: -5%;
+    top: -5%;
+    animation-name: backgroundColorPalette;
+    animation-duration: 0.75s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+
+/* Anims */
+@keyframes backgroundColorPalette {
+    0% {
+      background: linear-gradient(220deg, #ee6055 0%, #60d394 50%, #aaf683 100%) center / cover;
+    }
+    25% {
+      background: linear-gradient(220deg, #60d394 0%, #aaf683 50%, #ffd97d 100%) center / cover;
+    }
+    50% {
+      background: linear-gradient(220deg, #aaf683 0%, #ffd97d 50%, #ff9b85 100%) center / cover;
+    }
+    75% {
+      background: linear-gradient(220deg, #ffd97d 0%, #ff9b85 50%, #ee6055 100%) center / cover;
+    }
+    100% {
+      background: linear-gradient(220deg, #ff9b85 0%, #ee6055 50%, #60d394 100%) center / cover;
+    }
+}
+
+@keyframes colorChange {
+    0% {border-color: red !important;}
+    25% {border-color: orange !important;}
+    50% {border-color: yellow !important;}
+    75% {border-color: green !important;}
+    100% {border-color: blue !important;}
+  }
